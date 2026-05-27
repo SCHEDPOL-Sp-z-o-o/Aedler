@@ -1,0 +1,26 @@
+# robots.txt for aedler.pl
+# Last updated: 2026
+
+User-agent: *
+Allow: /
+Disallow: /scraps/
+Disallow: /uploads/
+Disallow: /screenshots/
+
+# AI training crawlers — allow (helps brand visibility in AI answers)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://aedler.pl/sitemap.xml

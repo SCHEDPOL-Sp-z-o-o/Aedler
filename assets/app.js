@@ -17,6 +17,10 @@
   const STORAGE_KEY = 'aedler.lang';
 
   function getInitialLang() {
+    // Priority: URL ?lang= → localStorage → browser → default
+    const url = new URLSearchParams(window.location.search);
+    const fromUrl = url.get('lang');
+    if (fromUrl && SUPPORTED.includes(fromUrl)) return fromUrl;
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored && SUPPORTED.includes(stored)) return stored;
     const nav = (navigator.language || 'pl').slice(0, 2).toLowerCase();
@@ -26,6 +30,8 @@
   function applyLang(lang) {
     const dict = window.I18N[lang] || window.I18N.pl;
     document.documentElement.setAttribute('lang', lang);
+    // Update document title for SEO
+    if (dict['seo.title']) document.title = dict['seo.title'];
 
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
@@ -47,6 +53,15 @@
       btn.classList.toggle('is-active', btn.dataset.lang === lang);
     });
     localStorage.setItem(STORAGE_KEY, lang);
+
+    // Update URL without reload (keeps hreflang URLs valid)
+    const url = new URL(window.location.href);
+    if (lang === 'pl') {
+      url.searchParams.delete('lang');
+    } else {
+      url.searchParams.set('lang', lang);
+    }
+    window.history.replaceState({}, '', url.toString());
   }
 
   function initLang() {

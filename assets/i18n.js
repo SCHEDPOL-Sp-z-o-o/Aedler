@@ -7,6 +7,7 @@
 window.I18N = {
   pl: {
     "lang.name": "Polski",
+    "seo.title": "AEDLER — Brodziki, wanny, odpływy · Stabildense® · Made in Poland",
 
     /* NAV */
     "nav.products": "Produkty",
@@ -252,6 +253,7 @@ window.I18N = {
 
   en: {
     "lang.name": "English",
+    "seo.title": "AEDLER — Shower trays, bathtubs, drains · Stabildense® · Made in Poland",
 
     "nav.products": "Products",
     "nav.technology": "Technology",
@@ -484,6 +486,7 @@ window.I18N = {
 
   de: {
     "lang.name": "Deutsch",
+    "seo.title": "AEDLER — Duschwannen, Badewannen, Abläufe · Stabildense® · Made in Poland",
 
     "nav.products": "Produkte",
     "nav.technology": "Technologie",
