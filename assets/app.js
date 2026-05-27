@@ -1,0 +1,211 @@
+/* ==========================================================================
+   AEDLER — interactions
+   - i18n switcher (PL default, EN, DE) — extensible
+   - Nav scroll state + mobile drawer
+   - Technology carousel
+   - Catalog lightbox
+   - Number counters
+   - Scroll-reveal observer
+   - Lead form (no backend - client-side success state)
+   ========================================================================== */
+
+(function () {
+  'use strict';
+
+  /* ---------- i18n ---------- */
+  const SUPPORTED = ['pl', 'en', 'de'];
+  const STORAGE_KEY = 'aedler.lang';
+
+  function getInitialLang() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored && SUPPORTED.includes(stored)) return stored;
+    const nav = (navigator.language || 'pl').slice(0, 2).toLowerCase();
+    return SUPPORTED.includes(nav) ? nav : 'pl';
+  }
+
+  function applyLang(lang) {
+    const dict = window.I18N[lang] || window.I18N.pl;
+    document.documentElement.setAttribute('lang', lang);
+
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] != null) el.textContent = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key] != null) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+      const spec = el.getAttribute('data-i18n-attr');
+      spec.split(',').forEach((pair) => {
+        const [attr, key] = pair.trim().split(':');
+        if (dict[key] != null) el.setAttribute(attr, dict[key]);
+      });
+    });
+
+    document.querySelectorAll('.lang-switcher button').forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset.lang === lang);
+    });
+    localStorage.setItem(STORAGE_KEY, lang);
+  }
+
+  function initLang() {
+    const lang = getInitialLang();
+    applyLang(lang);
+    document.querySelectorAll('.lang-switcher button').forEach((btn) => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    });
+  }
+
+  /* ---------- Nav ---------- */
+  function initNav() {
+    const nav = document.querySelector('.nav');
+    const drawer = document.querySelector('.nav-drawer');
+    const burger = document.querySelector('.nav-burger');
+
+    const onScroll = () => {
+      nav.classList.toggle('is-scrolled', window.scrollY > 8);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (burger && drawer) {
+      burger.addEventListener('click', () => {
+        drawer.classList.toggle('is-open');
+      });
+      drawer.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => drawer.classList.remove('is-open'));
+      });
+    }
+  }
+
+  /* ---------- Carousel ---------- */
+  function initCarousel() {
+    const root = document.querySelector('.carousel');
+    if (!root) return;
+    const slides = root.querySelectorAll('.carousel-slide');
+    const visuals = root.querySelectorAll('.carousel-visual img');
+    const dots = root.querySelectorAll('.carousel-dots button');
+    const prev = root.querySelector('.carousel-arrows .prev');
+    const next = root.querySelector('.carousel-arrows .next');
+    let idx = 0;
+    let timer = null;
+
+    function show(i) {
+      idx = (i + slides.length) % slides.length;
+      slides.forEach((s, j) => s.classList.toggle('is-active', j === idx));
+      visuals.forEach((v, j) => v.classList.toggle('is-active', j === idx));
+      dots.forEach((d, j) => d.classList.toggle('is-active', j === idx));
+    }
+    function autoplay() {
+      clearInterval(timer);
+      timer = setInterval(() => show(idx + 1), 7000);
+    }
+    dots.forEach((d, j) => d.addEventListener('click', () => { show(j); autoplay(); }));
+    prev && prev.addEventListener('click', () => { show(idx - 1); autoplay(); });
+    next && next.addEventListener('click', () => { show(idx + 1); autoplay(); });
+
+    show(0);
+    autoplay();
+
+    // Pause on hover
+    root.addEventListener('mouseenter', () => clearInterval(timer));
+    root.addEventListener('mouseleave', autoplay);
+  }
+
+  /* ---------- Lightbox ---------- */
+  function initLightbox() {
+    const lb = document.querySelector('.lightbox');
+    if (!lb) return;
+    const img = lb.querySelector('img');
+    const close = lb.querySelector('.close');
+
+    document.querySelectorAll('.cat-card').forEach((card) => {
+      card.addEventListener('click', () => {
+        const src = card.getAttribute('data-zoom');
+        if (!src) return;
+        img.src = src;
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function dismiss() {
+      lb.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+    close && close.addEventListener('click', dismiss);
+    lb.addEventListener('click', (e) => { if (e.target === lb) dismiss(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') dismiss(); });
+  }
+
+  /* ---------- Number counters ---------- */
+  function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+  function animateNumber(el, to, prefix = '', suffix = '') {
+    const dur = 1400;
+    const start = performance.now();
+    function tick(now) {
+      const t = Math.min(1, (now - start) / dur);
+      const e = easeOutQuart(t);
+      const v = Math.floor(to * e);
+      el.textContent = prefix + v.toLocaleString('pl-PL') + suffix;
+      if (t < 1) requestAnimationFrame(tick);
+      else el.textContent = prefix + to.toLocaleString('pl-PL') + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function initCounters() {
+    const cells = document.querySelectorAll('[data-count]');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.dataset.counted) {
+          entry.target.dataset.counted = '1';
+          const to = parseInt(entry.target.dataset.count, 10);
+          const suffix = entry.target.dataset.suffix || '';
+          const prefix = entry.target.dataset.prefix || '';
+          animateNumber(entry.target, to, prefix, suffix);
+        }
+      });
+    }, { threshold: 0.3 });
+    cells.forEach((c) => obs.observe(c));
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  function initReveal() {
+    const items = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+    items.forEach((i) => obs.observe(i));
+  }
+
+  /* ---------- Form ---------- */
+  function initForm() {
+    const form = document.querySelector('.form');
+    const thanks = document.querySelector('.form-thanks');
+    if (!form) return;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.style.display = 'none';
+      if (thanks) thanks.classList.add('is-shown');
+    });
+  }
+
+  /* ---------- Init ---------- */
+  document.addEventListener('DOMContentLoaded', () => {
+    initLang();
+    initNav();
+    initCarousel();
+    initLightbox();
+    initCounters();
+    initReveal();
+    initForm();
+  });
+})();

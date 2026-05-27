@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<title>AEDLER — Ulotka produktowa 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,600&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+/* ============================================================
+   PRINT SETUP — A4 + 3mm bleed = 216mm × 303mm
+   Safe zone: 8mm from each physical edge
+   ============================================================ */
+@page {
+  size: 216mm 303mm;
+  margin: 0;
+}
+
+@media print {
+  .screen-hint { display: none !important; }
+  html, body { width: 216mm; background: none; }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+}
+
+body {
+  width: 216mm;
+  background: #ccc;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --bg:        #0a0a0c;
+  --bg-soft:   #111114;
+  --surface:   #16161a;
+  --gold:      #c1a06a;
+  --gold-deep: #8e7547;
+  --gold-soft: #d5b988;
+  --gold-tint: rgba(193,160,106,0.12);
+  --fg:        #f3f1ec;
+  --fg-m:      rgba(243,241,236,0.55);
+  --fg-d:      rgba(243,241,236,0.32);
+  --light:     #f6f4ef;
+  --white:     #ffffff;
+  --ink:       #0a0a0c;
+  --ink-m:     #5e5e63;
+  --border:    rgba(255,255,255,0.09);
+  --border-l:  rgba(10,10,12,0.10);
+  --safe:      8mm;
+  --bleed:     3mm;
+}
+
+/* ============================================================
+   PAGES
+   ============================================================ */
+.page {
+  width: 216mm;
+  height: 303mm;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+}
+
+/* Screen display */
+@media screen {
+  body { padding: 20px; display: flex; flex-direction: column; gap: 24px; background: #888; }
+  .page { box-shadow: 0 8px 60px rgba(0,0,0,0.5); }
+}
+
+/* ============================================================
+   TYPE UTILITIES
+   ============================================================ */
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   PAGE 1 — FRONT
+   Full-bleed dark with hero render
+   ============================================================ */
+.page--front { background: var(--bg); color: var(--fg); }
+
+.f-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.f-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg,
+      rgba(10,10,12,0.82)  0%,
+      rgba(10,10,12,0.20) 22%,
+      rgba(10,10,12,0.05) 38%,
+      rgba(10,10,12,0.08) 50%,
+      rgba(10,10,12,0.55) 65%,
+      rgba(10,10,12,0.96) 100%
+    ),
+    linear-gradient(90deg,
+      rgba(10,10,12,0.45) 0%,
+      rgba(10,10,12,0.00) 45%
+    );
+}
+
+/* Header */
+.f-header {
+  position: absolute;
+  top: var(--safe);
+  left: var(--safe);
+  right: var(--safe);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.f-logo { height: 21mm; width: auto; filter: invert(1) brightness(1.15); }
+
+.f-group {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5mm;
+}
+.f-group .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6.5pt;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--fg-d);
+}
+.f-group .name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Eyebrow */
+.f-eyebrow {
+  position: absolute;
+  left: var(--safe);
+  bottom: 118mm;
+  display: flex;
+  align-items: center;
+  gap: 8pt;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6.5pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.f-eyebrow::before {
+  content: "";
+  display: block;
+  width: 14pt;
+  height: 0.6pt;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* Main headline */
+.f-headline {
+  position: absolute;
+  left: var(--safe);
+  right: 28mm;
+  bottom: 74mm;
+  font-size: 30pt;
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -0.022em;
+}
+.f-headline em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* Tagline */
+.f-tagline {
+  position: absolute;
+  left: var(--safe);
+  bottom: 62mm;
+  right: 55mm;
+  font-size: 8.5pt;
+  line-height: 1.5;
+  color: var(--fg-m);
+  font-weight: 300;
+}
+
+/* Gold accent line */
+.f-accent-line {
+  position: absolute;
+  left: var(--safe);
+  bottom: 59.5mm;
+  width: 22mm;
+  height: 0.6pt;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+/* Stats strip */
+.f-stats {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 57mm;
+  background: rgba(10,10,12,0.96);
+  border-top: 0.6pt solid rgba(193,160,106,0.30);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 5mm var(--safe) var(--safe);
+  gap: 0;
+}
+
+.stat-cell {
+  padding: 3mm 5mm 2mm 0;
+  border-right: 0.5pt solid rgba(255,255,255,0.07);
+  border-bottom: 0.5pt solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5mm;
+}
+.stat-cell:nth-child(3) { border-right: 0; }
+.stat-cell:nth-child(4),
+.stat-cell:nth-child(5),
+.stat-cell:nth-child(6) { border-bottom: 0; padding-top: 3mm; }
+.stat-cell:nth-child(6) { border-right: 0; }
+
+.stat-val {
+  font-size: 19pt;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  color: var(--fg);
+}
+.stat-val em { font-style: italic; font-weight: 600; color: var(--gold); }
+.stat-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 5.5pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-d);
+}
+
+/* Made in Poland badge */
+.f-mip {
+  position: absolute;
+  right: var(--safe);
+  bottom: var(--safe);
+  display: flex;
+  align-items: center;
+  gap: 4pt;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+}
+.mip-dot {
+  width: 5pt; height: 5pt;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* Cert tags on front */
+.f-certs {
+  position: absolute;
+  right: var(--safe);
+  bottom: 12mm;
+  display: flex;
+  gap: 2mm;
+}
+.cert-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 5.5pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1.5pt 4pt;
+  border: 0.6pt solid rgba(193,160,106,0.35);
+  border-radius: 2pt;
+  color: var(--gold);
+}
+
+/* ============================================================
+   PAGE 2 — BACK
+   Light background, structured info
+   ============================================================ */
+.page--back {
+  background: var(--light);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Back header ── */
+.b-header {
+  background: var(--bg);
+  color: var(--fg);
+  padding: 5.5mm var(--safe);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  height: 21mm;
+}
+.b-header-left { display: flex; flex-direction: column; gap: 1.5mm; }
+.b-header-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6pt;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 6pt;
+}
+.b-header-eyebrow::before {
+  content: "";
+  display: block;
+  width: 10pt;
+  height: 0.5pt;
+  background: var(--gold);
+}
+.b-header h2 {
+  font-size: 14pt;
+  font-weight: 300;
+  letter-spacing: -0.018em;
+  line-height: 1.1;
+}
+.b-header h2 em { font-style: italic; font-weight: 600; color: var(--gold); }
+.b-logo { height: 12mm; width: auto; filter: invert(1) brightness(1.1); }
+
+/* ── Product grid ── */
+.b-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex-shrink: 0;
+  height: 90mm;
+  border-bottom: 0.5pt solid rgba(10,10,12,0.12);
+}
+
+.b-prod {
+  position: relative;
+  overflow: hidden;
+  border-right: 0.5pt solid rgba(10,10,12,0.10);
+  display: flex;
+  flex-direction: column;
+}
+.b-prod:last-child { border-right: 0; }
+
+.b-prod-img {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+.b-prod-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Gold top accent on image */
+.b-prod-img::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2pt;
+  background: var(--gold);
+  z-index: 2;
+}
+
+/* Category overlay */
+.b-prod-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(10,10,12,0.55) 100%);
+  z-index: 1;
+}
+
+.b-prod-info {
+  background: var(--white);
+  padding: 3mm 3.5mm 3.5mm;
+  border-top: 0.4pt solid rgba(10,10,12,0.08);
+  flex-shrink: 0;
+}
+.b-prod-name {
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.2mm;
+  line-height: 1.2;
+}
+.b-prod-sku {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  display: block;
+  margin-bottom: 1.5mm;
+}
+.b-prod-desc {
+  font-size: 6.5pt;
+  color: var(--ink-m);
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* ── Technology section ── */
+.b-tech {
+  background: var(--bg);
+  color: var(--fg);
+  padding: 6mm var(--safe);
+  flex-shrink: 0;
+  height: 52mm;
+  display: grid;
+  grid-template-columns: 44mm 1fr;
+  gap: 8mm;
+  align-items: start;
+  border-top: 0.6pt solid rgba(193,160,106,0.25);
+}
+
+.b-tech-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+}
+
+.b-tech-badge {
+  height: 10mm;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.b-tech-tagline {
+  font-size: 7.5pt;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--fg-m);
+}
+.b-tech-tagline em { color: var(--gold); font-style: normal; font-weight: 500; }
+
+.b-tech-cert {
+  display: flex;
+  gap: 2mm;
+  flex-wrap: wrap;
+  margin-top: 1mm;
+}
+
+.b-tech-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.5mm;
+}
+
+.b-tp {
+  background: var(--surface);
+  border: 0.5pt solid rgba(255,255,255,0.07);
+  border-top: 1.5pt solid var(--gold);
+  border-radius: 2pt;
+  padding: 3mm 3.5mm;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5mm;
+}
+.b-tp-title {
+  font-size: 7.5pt;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: -0.005em;
+}
+.b-tp-body {
+  font-size: 6.5pt;
+  color: var(--fg-m);
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* ESG row inside tech */
+.b-tech-esg {
+  display: flex;
+  gap: 5mm;
+  margin-top: 2mm;
+  padding-top: 3mm;
+  border-top: 0.5pt solid rgba(255,255,255,0.07);
+}
+.b-esg-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+}
+.b-esg-val {
+  font-size: 15pt;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  color: var(--fg);
+  line-height: 1;
+}
+.b-esg-val em { color: var(--gold); font-style: italic; font-weight: 500; }
+.b-esg-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 5.5pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-d);
+}
+
+/* ── Partnership section ── */
+.b-part {
+  background: var(--light);
+  padding: 5.5mm var(--safe) 5mm;
+  flex-shrink: 0;
+  height: 60mm;
+  display: flex;
+  flex-direction: column;
+  gap: 4mm;
+}
+
+.b-part-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.b-part-head h3 {
+  font-size: 11pt;
+  font-weight: 300;
+  letter-spacing: -0.018em;
+}
+.b-part-head h3 em { font-style: italic; font-weight: 600; color: var(--gold-deep); }
+.b-part-head .eyebrow-sm {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 5.5pt;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.b-part-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.5mm;
+  flex: 1;
+}
+
+.b-pc {
+  background: var(--white);
+  border-radius: 3pt;
+  border: 0.5pt solid rgba(10,10,12,0.09);
+  border-top: 2pt solid var(--gold);
+  padding: 3.5mm 3.5mm 3mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+}
+.b-pc-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 6pt;
+  letter-spacing: 0.18em;
+  color: var(--gold-deep);
+}
+.b-pc-title {
+  font-size: 8pt;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.b-pc-pts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8mm;
+  flex: 1;
+}
+.b-pc-pts li {
+  font-size: 6.5pt;
+  color: var(--ink-m);
+  padding-left: 6pt;
+  position: relative;
+  line-height: 1.3;
+  font-weight: 300;
+}
+.b-pc-pts li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 4pt;
+  width: 4pt; height: 0.6pt;
+  background: var(--gold);
+}
+
+/* ── Back footer ── */
+.b-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  background: var(--bg);
+  padding: 5mm var(--safe);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 22mm;
+  border-top: 0.6pt solid rgba(193,160,106,0.20);
+}
+
+.b-footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8mm;
+}
+.b-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 8mm;
+}
+.b-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 3pt;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 7pt;
+  letter-spacing: 0.06em;
+  color: var(--fg-m);
+}
+.b-contact-item .ci-label {
+  font-size: 5.5pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-d);
+  margin-right: 2pt;
+}
+.b-contact-item .ci-val { color: var(--fg); }
+
+.b-footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3mm;
+}
+.b-footer-schedpol {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 5.5pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-d);
+  text-align: right;
+  line-height: 1.5;
+}
+.b-footer-schedpol b { color: var(--gold); font-weight: 400; }
+
+/* Bleed colour bars for print registration */
+.bleed-bar-top {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: var(--bleed);
+  background: var(--bg);
+  z-index: 100;
+}
+.bleed-bar-bot {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: var(--bleed);
+  background: inherit;
+  z-index: 100;
+}
+
+/* ============================================================
+   SCREEN-ONLY PRINT BUTTON
+   ============================================================ */
+.screen-hint {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--gold);
+  color: #0a0a0c;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(193,160,106,0.45);
+  z-index: 9999;
+  border: 0;
+  letter-spacing: -0.005em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.screen-hint:hover { background: #d5b988; }
+.screen-hint svg { flex-shrink: 0; }
+
+@media print { .screen-hint { display: none; } }
+</style>
+</head>
+<body>
+
+<!-- ================================================================
+     PAGE 1 — FRONT
+     ================================================================ -->
+<div class="page page--front">
+  <!-- 3mm bleed extension top -->
+  <div class="bleed-bar-top"></div>
+
+  <!-- Full-bleed hero render -->
+  <img class="f-hero-img" src="assets/render-aranz-01.jpg" alt="" />
+
+  <!-- Gradient overlays -->
+  <div class="f-overlay"></div>
+
+  <!-- Header: Logo + Group -->
+  <header class="f-header">
+    <img class="f-logo" src="assets/logo.png" alt="Aedler" />
+    <div class="f-group">
+      <span class="label">Marka grupy</span>
+      <span class="name">Schedpol · Polska</span>
+    </div>
+  </header>
+
+  <!-- Eyebrow above headline -->
+  <div class="f-eyebrow">Europejska inżynieria łazienkowa</div>
+
+  <!-- Main headline -->
+  <h1 class="f-headline">
+    Europejska precyzja,<br/>
+    trwały fundament<br/>
+    <em>każdej łazienki.</em>
+  </h1>
+
+  <!-- Tagline -->
+  <p class="f-tagline">
+    Patentowana technologia Stabildense® · Produkcja w Polsce · Normy DIN EN 16165 · Eksport do 28 krajów
+  </p>
+
+  <!-- Accent line -->
+  <div class="f-accent-line"></div>
+
+  <!-- Cert tags -->
+  <div class="f-certs">
+    <span class="cert-tag">ISO 9001</span>
+    <span class="cert-tag">ISO 14001</span>
+    <span class="cert-tag">DIN EN 16165</span>
+  </div>
+
+  <!-- Stats strip (6 numbers, 2×3) -->
+  <div class="f-stats">
+    <!-- Row 1 -->
+    <div class="stat-cell">
+      <div class="stat-val"><em>40</em><sup style="font-size:11pt;color:var(--gold);font-style:italic;font-weight:600;vertical-align:super;font-size:10pt">+</sup></div>
+      <div class="stat-lbl">Lat doświadczenia</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val"><em>20</em><sup style="font-size:10pt;color:var(--gold);font-style:italic;font-weight:600;vertical-align:super">+</sup></div>
+      <div class="stat-lbl">Patentów technologicznych</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val"><em>15</em><sup style="font-size:10pt;color:var(--gold);font-style:italic;font-weight:600;vertical-align:super">M+</sup></div>
+      <div class="stat-lbl">Produktów dostarczonych</div>
+    </div>
+    <!-- Row 2 -->
+    <div class="stat-cell">
+      <div class="stat-val"><em>1 900</em><sup style="font-size:10pt;color:var(--gold);font-style:italic;font-weight:600;vertical-align:super">+</sup></div>
+      <div class="stat-lbl">Aktywnych SKU</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val"><em>28</em></div>
+      <div class="stat-lbl">Krajów eksportu</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-val" style="display:flex;align-items:baseline;gap:2pt">
+        <span style="font-size:9pt;color:var(--fg-m);font-weight:300">pln</span>
+        <em>600</em>
+      </div>
+      <div class="stat-lbl">Form produkcyjnych</div>
+    </div>
+  </div>
+
+  <!-- Made in Poland -->
+  <div class="f-mip">
+    <span class="mip-dot"></span>
+    Made in Poland
+  </div>
+</div>
+
+<!-- ================================================================
+     PAGE 2 — BACK
+     ================================================================ -->
+<div class="page page--back">
+
+  <!-- Header -->
+  <header class="b-header">
+    <div class="b-header-left">
+      <div class="b-header-eyebrow">Ekosystem produktowy</div>
+      <h2>Kompletna <em>oferta</em> dla każdego rynku</h2>
+    </div>
+    <img class="b-logo" src="assets/logo.png" alt="Aedler" />
+  </header>
+
+  <!-- Product grid: 4 columns -->
+  <div class="b-products">
+
+    <div class="b-prod">
+      <div class="b-prod-img">
+        <img src="assets/render-omega-140.jpg" alt="Brodziki Aedler" />
+      </div>
+      <div class="b-prod-info">
+        <span class="b-prod-name">Brodziki</span>
+        <span class="b-prod-sku">811 SKU · Stabildense® · Standard Plus®</span>
+        <p class="b-prod-desc">Kompozytowe, zintegrowane i akrylowe. Antypoślizgowe, certyfikowane DIN EN 16165.</p>
+      </div>
+    </div>
+
+    <div class="b-prod">
+      <div class="b-prod-img">
+        <img src="assets/render-wanna-ferra.jpg" alt="Wanny Aedler" />
+      </div>
+      <div class="b-prod-info">
+        <span class="b-prod-name">Wanny</span>
+        <span class="b-prod-sku">91 SKU · Stabildense® · Akryl</span>
+        <p class="b-prod-desc">Wielowarstwowe Stabildense® i klasyczne akrylowe. Woda gorąca nawet po godzinach.</p>
+      </div>
+    </div>
+
+    <div class="b-prod">
+      <div class="b-prod-img">
+        <img src="assets/render-slimlux-1.jpg" alt="Odpływy Aedler" />
+      </div>
+      <div class="b-prod-info">
+        <span class="b-prod-name">Odpływy</span>
+        <span class="b-prod-sku">751 SKU · 663 maskownice</span>
+        <p class="b-prod-desc">Liniowe, punktowe i podpłytkowe. Maskownice w 663 wariantach designu.</p>
+      </div>
+    </div>
+
+    <div class="b-prod">
+      <div class="b-prod-img">
+        <img src="assets/render-antis-carrier.jpg" alt="Nośniki Aedler" />
+      </div>
+      <div class="b-prod-info">
+        <span class="b-prod-name">Nośniki i obudowy</span>
+        <span class="b-prod-sku">108 SKU · Caspar · Antis</span>
+        <p class="b-prod-desc">Stelaże instalacyjne, panele frontowe, akcesoria spa. Pełna inżynieria łazienki.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Technology strip -->
+  <div class="b-tech">
+    <div class="b-tech-left">
+      <img class="b-tech-badge" src="assets/stabildense-badge.png" alt="Stabildense®" />
+      <p class="b-tech-tagline">
+        Patentowana technologia 5-warstwowa.<br/>
+        <em>Zarejestrowana w UE.</em>
+      </p>
+      <div class="b-tech-esg">
+        <div class="b-esg-item">
+          <div class="b-esg-val"><em>1 500</em></div>
+          <div class="b-esg-lbl">kg obciążenie</div>
+        </div>
+        <div class="b-esg-item">
+          <div class="b-esg-val"><em>12</em><span style="font-size:9pt;color:var(--fg-m);font-weight:300">+</span></div>
+          <div class="b-esg-lbl">lat gwarancji</div>
+        </div>
+        <div class="b-esg-item">
+          <div class="b-esg-val"><em>0</em></div>
+          <div class="b-esg-lbl">emisji freonów</div>
+        </div>
+      </div>
+      <div class="b-tech-cert">
+        <span class="cert-tag" style="font-size:5.5pt;border-color:rgba(193,160,106,0.3)">Antibac®</span>
+        <span class="cert-tag" style="font-size:5.5pt;border-color:rgba(193,160,106,0.3)">Easy to Clean</span>
+        <span class="cert-tag" style="font-size:5.5pt;border-color:rgba(193,160,106,0.3)">Bezfreonowe</span>
+      </div>
+    </div>
+
+    <div class="b-tech-points">
+      <div class="b-tp">
+        <div class="b-tp-title">Izolacja termiczna</div>
+        <div class="b-tp-body">Powierzchnia zawsze przyjemnie ciepła. Piana EPS zamknięta w kompozycie.</div>
+      </div>
+      <div class="b-tp">
+        <div class="b-tp-title">Tłumienie akustyczne</div>
+        <div class="b-tp-body">Cicha łazienka dzięki wielowarstwowej strukturze pochłaniającej wibracje.</div>
+      </div>
+      <div class="b-tp">
+        <div class="b-tp-title">Ochrona Antibac®</div>
+        <div class="b-tp-body">Powłoka hamuje wzrost bakterii i pleśni. Nieporowata powierzchnia akrylowa.</div>
+      </div>
+      <div class="b-tp">
+        <div class="b-tp-title">Easy to Clean</div>
+        <div class="b-tp-body">Wystarczy woda i miękka ściereczka. Precyzyjne spadki — błyskawiczny odpływ.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Partnership models -->
+  <div class="b-part">
+    <div class="b-part-head">
+      <h3>Cztery modele <em>współpracy</em></h3>
+      <span class="eyebrow-sm">Wybierz swój model</span>
+    </div>
+    <div class="b-part-cols">
+      <div class="b-pc">
+        <div class="b-pc-num">01</div>
+        <div class="b-pc-title">Marka Aedler</div>
+        <ul class="b-pc-pts">
+          <li>Pełen katalog 1 900+ SKU</li>
+          <li>Materiały POS w 3 językach</li>
+          <li>Logistyka FCA / DDP</li>
+        </ul>
+      </div>
+      <div class="b-pc">
+        <div class="b-pc-num">02</div>
+        <div class="b-pc-title">Private Label</div>
+        <ul class="b-pc-pts">
+          <li>Twój branding i opakowania</li>
+          <li>MOQ od 24 szt.</li>
+          <li>Time-to-market 6–8 tyg.</li>
+        </ul>
+      </div>
+      <div class="b-pc">
+        <div class="b-pc-num">03</div>
+        <div class="b-pc-title">Serie dedykowane</div>
+        <ul class="b-pc-pts">
+          <li>R&D w polskim centrum</li>
+          <li>Prototypowanie 4–6 tyg.</li>
+          <li>Wspólna rejestracja patentów</li>
+        </ul>
+      </div>
+      <div class="b-pc">
+        <div class="b-pc-num">04</div>
+        <div class="b-pc-title">Dropshipping</div>
+        <ul class="b-pc-pts">
+          <li>20 000 szt. na stanie</li>
+          <li>Wysyłka 24h w całej UE</li>
+          <li>API do integracji e-comm.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="b-footer">
+    <div class="b-footer-contacts">
+      <div class="b-contact-row">
+        <div class="b-contact-item">
+          <span class="ci-label">Web</span>
+          <span class="ci-val">www.aedler.eu</span>
+        </div>
+        <div class="b-contact-item">
+          <span class="ci-label">Email</span>
+          <span class="ci-val">export@aedler.eu</span>
+        </div>
+      </div>
+      <div class="b-contact-row">
+        <div class="b-contact-item">
+          <span class="ci-label">Tel</span>
+          <span class="ci-val">+48 33 813 00 00</span>
+        </div>
+        <div class="b-contact-item">
+          <span class="ci-label">Adres</span>
+          <span class="ci-val">ul. Przemysłowa 1, 34-300 Żywiec, Polska</span>
+        </div>
+      </div>
+    </div>
+    <div class="b-footer-right">
+      <div class="b-footer-schedpol">
+        Marka grupy <b>Schedpol Sp. z o.o.</b><br/>
+        <b>Made in Poland</b> · Eksport do 28 krajów
+      </div>
+      <div class="b-tech-cert" style="display:flex;gap:2mm;justify-content:flex-end">
+        <span class="cert-tag">ISO 9001</span>
+        <span class="cert-tag">ISO 14001</span>
+        <span class="cert-tag">DIN EN 16165</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Print trigger button (screen only) -->
+<button class="screen-hint" onclick="window.print()">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path d="M4 5V2h8v3M4 11H2V7h12v4h-2M4 11v3h8v-3M4 11h8" stroke="#0a0a0c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  Drukuj / Zapisz PDF
+</button>
+
+</body>
+</html>
