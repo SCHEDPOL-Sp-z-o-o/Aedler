@@ -13,7 +13,7 @@
   'use strict';
 
   /* ---------- i18n ---------- */
-  const SUPPORTED = ['pl', 'en', 'de'];
+  const SUPPORTED = ['en', 'de', 'fr', 'pl', 'cs', 'sk', 'ro'];
   const STORAGE_KEY = 'aedler.lang';
 
   function getInitialLang() {
@@ -23,8 +23,8 @@
     if (fromUrl && SUPPORTED.includes(fromUrl)) return fromUrl;
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored && SUPPORTED.includes(stored)) return stored;
-    const nav = (navigator.language || 'pl').slice(0, 2).toLowerCase();
-    return SUPPORTED.includes(nav) ? nav : 'pl';
+    const nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    return SUPPORTED.includes(nav) ? nav : 'en';
   }
 
   function applyLang(lang) {
@@ -32,6 +32,20 @@
     document.documentElement.setAttribute('lang', lang);
     // Update document title for SEO
     if (dict['seo.title']) document.title = dict['seo.title'];
+
+    // Keep crawlable meta (description, Open Graph, Twitter, locale) in sync with language.
+    const setMeta = (sel, val) => { if (val == null) return; const m = document.querySelector(sel); if (m) m.setAttribute('content', val); };
+    if (dict['seo.desc']) {
+      setMeta('meta[name="description"]', dict['seo.desc']);
+      setMeta('meta[property="og:description"]', dict['seo.desc']);
+      setMeta('meta[name="twitter:description"]', dict['seo.desc']);
+    }
+    if (dict['seo.title']) {
+      setMeta('meta[property="og:title"]', dict['seo.title']);
+      setMeta('meta[name="twitter:title"]', dict['seo.title']);
+    }
+    const OG_LOCALE = { pl: 'pl_PL', en: 'en_GB', de: 'de_DE', fr: 'fr_FR', cs: 'cs_CZ', sk: 'sk_SK', ro: 'ro_RO' };
+    setMeta('meta[property="og:locale"]', OG_LOCALE[lang] || 'en_GB');
 
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
@@ -62,6 +76,9 @@
       url.searchParams.set('lang', lang);
     }
     window.history.replaceState({}, '', url.toString());
+
+    // Notify content-tweak layer so its overrides re-apply on top of the new language.
+    document.dispatchEvent(new CustomEvent('aedler:langchanged', { detail: { lang } }));
   }
 
   function initLang() {
@@ -201,15 +218,22 @@
     items.forEach((i) => obs.observe(i));
   }
 
-  /* ---------- Form ---------- */
-  function initForm() {
-    const form = document.querySelector('.form');
-    const thanks = document.querySelector('.form-thanks');
-    if (!form) return;
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      form.style.display = 'none';
-      if (thanks) thanks.classList.add('is-shown');
+  /* ---------- Video facades (click-to-load YouTube) ---------- */
+  function initVideos() {
+    document.querySelectorAll('.video-embed[data-video]').forEach((box) => {
+      box.addEventListener('click', () => {
+        if (box.dataset.loaded) return;
+        box.dataset.loaded = '1';
+        const id = box.getAttribute('data-video');
+        const lang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&hl=${lang}&cc_lang_pref=${lang}`;
+        iframe.title = box.parentElement.querySelector('h3') ? box.parentElement.querySelector('h3').textContent : 'Video';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        box.innerHTML = '';
+        box.appendChild(iframe);
+      });
     });
   }
 
@@ -220,7 +244,7 @@
     initCarousel();
     initLightbox();
     initCounters();
+    initVideos();
     initReveal();
-    initForm();
   });
 })();
