@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://aedler.pl/</loc>
-    <lastmod>2026-05-27</lastmod>
+    <loc>https://aedler.de/</loc>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://aedler.pl/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://aedler.pl/?lang=en" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://aedler.pl/?lang=de" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aedler.pl/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://aedler.de/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://aedler.de/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aedler.de/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://aedler.de/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://aedler.de/?lang=cs" />
+    <xhtml:link rel="alternate" hreflang="sk" href="https://aedler.de/?lang=sk" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://aedler.de/?lang=ro" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aedler.de/" />
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/Z6Pmj5tpbic/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Stabildense® w brodzikach — technologia AEDLER</video:title>
+      <video:description>Jak wielowarstwowa struktura Stabildense® w brodzikach AEDLER zapewnia izolację termiczną, tłumienie akustyczne i wytrzymałość do 1500 kg.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/Z6Pmj5tpbic</video:player_loc>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/PV7fNG78X4Y/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>System renowacji AEDLER — szybka wymiana wanny na prysznic</video:title>
+      <video:description>Gotowy system renowacji AEDLER umożliwiający szybką wymianę wanny na prysznic — bez kucia i bałaganu budowlanego.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/PV7fNG78X4Y</video:player_loc>
+    </video:video>
   </url>
 </urlset>

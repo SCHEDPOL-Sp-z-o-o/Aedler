@@ -1,5 +1,4 @@
-# robots.txt for aedler.pl
-# Last updated: 2026
+# robots.txt for aedler.de
 
 User-agent: *
 Allow: /
@@ -7,20 +6,69 @@ Disallow: /scraps/
 Disallow: /uploads/
 Disallow: /screenshots/
 
-# AI training crawlers — allow (helps brand visibility in AI answers)
+# ── AI assistants & training crawlers — explicitly allowed ──
+# (improves brand visibility in AI answers, search assistants and LLM citations)
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Google-CloudVertexBot
+Allow: /
+
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://aedler.pl/sitemap.xml
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# Machine-readable site summary for LLMs
+# See: https://aedler.de/llms.txt
+
+Sitemap: https://aedler.de/sitemap.xml
