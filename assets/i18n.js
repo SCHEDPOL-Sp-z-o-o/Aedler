@@ -8,7 +8,7 @@ window.I18N = {
   pl: {
     "lang.name": "Polski",
     "seo.title": "AEDLER — Brodziki, wanny, odpływy · Stabildense® · Made in Poland",
-    "seo.desc": "AEDLER — premium brodziki, wanny i odpływy w patentowanej technologii Stabildense®: ultralekki materiał kompozytowy 9 kg/m² o ekstremalnej wytrzymałości na nacisk i uderzenia udarowe. Marka grupy Schedpol, 45+ lat doświadczenia, 1900+ SKU. Współpraca handlowa, Private Label, Dropshipping.",
+    "seo.desc": "AEDLER — premium brodziki, wanny i odpływy w zastrzeżonej technologii Stabildense®: ultralekki materiał kompozytowy 9 kg/m² o ekstremalnej wytrzymałości na nacisk i uderzenia udarowe. Marka grupy Schedpol, 45+ lat doświadczenia, 1900+ SKU. Współpraca handlowa, Private Label, Dropshipping.",
 
     /* NAV */
     "nav.products": "Produkty",
@@ -23,7 +23,7 @@ window.I18N = {
     "hero.title.line1": "Europejska precyzja,",
     "hero.title.line2": "trwały fundament",
     "hero.title.line3": "każdej łazienki.",
-    "hero.sub": "Marka Aedler łączy polskie dziedzictwo produkcyjne z opatentowaną technologią Stabildense®. Spełniamy najwyższe normy Unii Europejskiej w zakresie akustyki, trwałości i higieny — projektując rozwiązania na dekady, nie sezony.",
+    "hero.sub": "Marka Aedler łączy polskie dziedzictwo produkcyjne z niezawodną, zastrzeżoną technologią Stabildense®. Spełniamy najwyższe normy Unii Europejskiej w zakresie akustyki, trwałości i higieny — projektując rozwiązania na dekady, nie sezony.",
     "hero.cta.primary": "Rozpocznij współpracę",
     "hero.cta.secondary": "Poznaj technologię",
     "hero.tag": "Aedler · Made in Poland",
@@ -91,6 +91,7 @@ window.I18N = {
     "video.v2.title": "System renowacji — wymiana wanny na prysznic",
     "video.v2.desc": "Gotowy system szybkiej wymiany wanny na prysznic — bez kucia i bałaganu.",
     "video.play": "Odtwórz film",
+    "video.watch": "Obejrzyj na YouTube",
 
     /* NUMBERS */
     "num.eyebrow": "Aedler & Schedpol w liczbach",
@@ -107,7 +108,7 @@ window.I18N = {
     /* BENTO ESG */
     "esg.eyebrow": "Innowacja & odpowiedzialność",
     "esg.title": "Standardy <em>europejskie</em>. Produkcja polska.",
-    "esg.lead": "Patentowana technologia Stabildense® to nasz wkład w lepszą codzienność. Zamknięty obieg materiałów EPS, energia odnawialna w fabryce i lokalne łańcuchy dostaw to nasz wkład w lepszą planetę.",
+    "esg.lead": "Zastrzeżona technologia Stabildense® to nasz wkład w lepszą codzienność. Zamknięty obieg materiałów EPS, energia odnawialna w fabryce i lokalne łańcuchy dostaw to nasz wkład w lepszą planetę.",
     "esg.tech.tag": "Stabildense®",
     "esg.tech.title": "Wielowarstwowa struktura, której nie da się skopiować.",
     "esg.tech.body": "5-warstwowa konstrukcja kompozytowa z metalowym wzmocnieniem. Wzór zastrzeżony, innowacja opracowana w polskim centrum R&D Schedpol; rozwiązanie stosowane z powodzeniem od blisko 20 lat. Waga materiału kompozytowego w brodziku to zaledwie 9 kg/m² — przy ekstremalnej wytrzymałości na nacisk i uderzenia udarowe.",
@@ -293,7 +294,7 @@ window.I18N = {
   en: {
     "lang.name": "English",
     "seo.title": "AEDLER — Shower trays, bathtubs, drains · Stabildense® · Made in Poland",
-    "seo.desc": "AEDLER — premium shower trays, bathtubs and drains in patented Stabildense® technology: an ultralight composite of just 9 kg/m² with extreme resistance to pressure and impact. A brand of the Schedpol group, 45+ years of experience, 1900+ SKU. Trade partnerships, Private Label, dropshipping.",
+    "seo.desc": "AEDLER — premium shower trays, bathtubs and drains in proprietary Stabildense® technology: an ultralight composite of just 9 kg/m² with extreme resistance to pressure and impact. A brand of the Schedpol group, 45+ years of experience, 1900+ SKU. Trade partnerships, Private Label, dropshipping.",
 
     "nav.products": "Products",
     "nav.technology": "Technology",
@@ -306,7 +307,7 @@ window.I18N = {
     "hero.title.line1": "European precision,",
     "hero.title.line2": "the lasting foundation",
     "hero.title.line3": "of every bathroom.",
-    "hero.sub": "Aedler combines Polish manufacturing heritage with patented Stabildense® technology. We meet the highest EU standards for acoustics, durability and hygiene — engineering solutions for decades, not seasons.",
+    "hero.sub": "Aedler combines Polish manufacturing heritage with proprietary Stabildense® technology. We meet the highest EU standards for acoustics, durability and hygiene — engineering solutions for decades, not seasons.",
     "hero.cta.primary": "Start a partnership",
     "hero.cta.secondary": "Explore the technology",
     "hero.tag": "Aedler · Made in Poland",
@@ -370,6 +371,7 @@ window.I18N = {
     "video.v2.title": "Bath-to-shower renovation system",
     "video.v2.desc": "A ready-made system for fast replacement of a bathtub with a shower — without demolition chaos.",
     "video.play": "Play video",
+    "video.watch": "Watch on YouTube",
 
     "num.eyebrow": "Aedler & Schedpol in numbers",
     "num.title": "Four decades of European <em>precision</em>.",
@@ -384,7 +386,7 @@ window.I18N = {
 
     "esg.eyebrow": "Innovation & responsibility",
     "esg.title": "<em>European</em> standards. Polish manufacturing.",
-    "esg.lead": "Patented Stabildense® technology is our contribution to a better everyday. A closed loop of EPS materials, renewable energy at the factory and local supply chains are our contribution to a better planet.",
+    "esg.lead": "Proprietary Stabildense® technology is our contribution to a better everyday. A closed loop of EPS materials, renewable energy at the factory and local supply chains are our contribution to a better planet.",
     "esg.tech.tag": "Stabildense®",
     "esg.tech.title": "A multi-layer structure that cannot be copied.",
     "esg.tech.body": "5-layer composite construction with metallic reinforcement. Registered design — an innovation developed at Schedpol's Polish R&D centre; proven in use for nearly 20 years. The composite material in the tray weighs just 9 kg/m² — with extreme resistance to pressure and impact.",
@@ -564,7 +566,7 @@ window.I18N = {
   de: {
     "lang.name": "Deutsch",
     "seo.title": "AEDLER — Duschwannen, Badewannen, Abläufe · Stabildense® · Made in Poland",
-    "seo.desc": "AEDLER — Premium-Duschwannen, -Badewannen und -Abläufe in patentierter Stabildense®-Technologie: ultraleichter Verbundwerkstoff mit nur 9 kg/m² und extremer Druck- und Schlagfestigkeit. Eine Marke der Schedpol-Gruppe, 45+ Jahre Erfahrung, 1900+ SKU. Handelspartnerschaften, Private Label, Dropshipping.",
+    "seo.desc": "AEDLER — Premium-Duschwannen, -Badewannen und -Abläufe in geschützter Stabildense®-Technologie: ultraleichter Verbundwerkstoff mit nur 9 kg/m² und extremer Druck- und Schlagfestigkeit. Eine Marke der Schedpol-Gruppe, 45+ Jahre Erfahrung, 1900+ SKU. Handelspartnerschaften, Private Label, Dropshipping.",
 
     "nav.products": "Produkte",
     "nav.technology": "Technologie",
@@ -577,7 +579,7 @@ window.I18N = {
     "hero.title.line1": "Europäische Präzision,",
     "hero.title.line2": "das dauerhafte Fundament",
     "hero.title.line3": "jedes Badezimmers.",
-    "hero.sub": "Aedler verbindet polnisches Produktionserbe mit patentierter Stabildense®-Technologie. Wir erfüllen höchste EU-Standards für Akustik, Langlebigkeit und Hygiene — entwickelt für Jahrzehnte, nicht Saisons.",
+    "hero.sub": "Aedler verbindet polnisches Produktionserbe mit geschützter Stabildense®-Technologie. Wir erfüllen höchste EU-Standards für Akustik, Langlebigkeit und Hygiene — entwickelt für Jahrzehnte, nicht Saisons.",
     "hero.cta.primary": "Partnerschaft starten",
     "hero.cta.secondary": "Technologie entdecken",
     "hero.tag": "Aedler · Made in Poland",
@@ -641,6 +643,7 @@ window.I18N = {
     "video.v2.title": "Renovierungssystem — Wanne zu Dusche",
     "video.v2.desc": "Ein fertiges System für den schnellen Austausch der Badewanne durch eine Dusche — ohne Abrisschaos.",
     "video.play": "Video abspielen",
+    "video.watch": "Auf YouTube ansehen",
 
     "num.eyebrow": "Aedler & Schedpol in Zahlen",
     "num.title": "Vier Jahrzehnte europäische <em>Präzision</em>.",
@@ -655,7 +658,7 @@ window.I18N = {
 
     "esg.eyebrow": "Innovation & Verantwortung",
     "esg.title": "<em>Europäische</em> Standards. Polnische Fertigung.",
-    "esg.lead": "Die patentierte Stabildense®-Technologie ist unser Beitrag zu einem besseren Alltag. Ein geschlossener EPS-Kreislauf, erneuerbare Energie im Werk und lokale Lieferketten sind unser Beitrag zu einem besseren Planeten.",
+    "esg.lead": "Die geschützte Stabildense®-Technologie ist unser Beitrag zu einem besseren Alltag. Ein geschlossener EPS-Kreislauf, erneuerbare Energie im Werk und lokale Lieferketten sind unser Beitrag zu einem besseren Planeten.",
     "esg.tech.tag": "Stabildense®",
     "esg.tech.title": "Eine Mehrschichtstruktur, die nicht kopiert werden kann.",
     "esg.tech.body": "5-schichtige Verbundkonstruktion mit Metallverstärkung. Eingetragenes Geschmacksmuster — eine Innovation aus dem polnischen F&E-Zentrum von Schedpol; seit fast 20 Jahren erfolgreich im Einsatz. Das Verbundmaterial der Duschwanne wiegt nur 9 kg/m² — bei extremer Druck- und Schlagfestigkeit.",
@@ -912,6 +915,7 @@ window.I18N = {
     "video.v2.title": "Système de rénovation — baignoire en douche",
     "video.v2.desc": "Un système clé en main pour remplacer rapidement une baignoire par une douche — sans travaux de démolition.",
     "video.play": "Lire la vidéo",
+    "video.watch": "Voir sur YouTube",
 
     "num.eyebrow": "Aedler & Schedpol en chiffres",
     "num.title": "Quatre décennies de <em>précision</em> européenne.",
@@ -1106,7 +1110,7 @@ window.I18N = {
   cs: {
     "lang.name": "Čeština",
     "seo.title": "AEDLER — Sprchové vaničky, vany, odtoky · Stabildense® · Made in Poland",
-    "seo.desc": "AEDLER — prémiové sprchové vaničky, vany a odtoky v patentované technologii Stabildense®: ultralehký kompozit o hmotnosti pouhých 9 kg/m² s extrémní odolností vůči tlaku a nárazům. Značka skupiny Schedpol, 45+ let zkušeností, 1900+ SKU. Obchodní spolupráce, Private Label, dropshipping.",
+    "seo.desc": "AEDLER — prémiové sprchové vaničky, vany a odtoky v chráněné technologii Stabildense®: ultralehký kompozit o hmotnosti pouhých 9 kg/m² s extrémní odolností vůči tlaku a nárazům. Značka skupiny Schedpol, 45+ let zkušeností, 1900+ SKU. Obchodní spolupráce, Private Label, dropshipping.",
 
     "nav.products": "Produkty",
     "nav.technology": "Technologie",
@@ -1119,7 +1123,7 @@ window.I18N = {
     "hero.title.line1": "Evropská preciznost,",
     "hero.title.line2": "trvalý základ",
     "hero.title.line3": "každé koupelny.",
-    "hero.sub": "Aedler spojuje polskou výrobní tradici s patentovanou technologií Stabildense®. Splňujeme nejvyšší normy EU v oblasti akustiky, trvanlivosti a hygieny — navrhujeme řešení na desetiletí, ne na sezony.",
+    "hero.sub": "Aedler spojuje polskou výrobní tradici s chráněnou technologií Stabildense®. Splňujeme nejvyšší normy EU v oblasti akustiky, trvanlivosti a hygieny — navrhujeme řešení na desetiletí, ne na sezony.",
     "hero.cta.primary": "Zahájit spolupráci",
     "hero.cta.secondary": "Poznejte technologii",
     "hero.tag": "Aedler · Made in Poland",
@@ -1183,6 +1187,7 @@ window.I18N = {
     "video.v2.title": "Renovační systém — výměna vany za sprchu",
     "video.v2.desc": "Hotový systém pro rychlou výměnu vany za sprchový kŭt — bez bourání a nepořádku.",
     "video.play": "Přehrát video",
+    "video.watch": "Přehrát na YouTube",
 
     "num.eyebrow": "Aedler & Schedpol v číslech",
     "num.title": "Čtyři desetiletí evropské <em>preciznosti</em>.",
@@ -1197,7 +1202,7 @@ window.I18N = {
 
     "esg.eyebrow": "Inovace a odpovědnost",
     "esg.title": "<em>Evropské</em> standardy. Polská výroba.",
-    "esg.lead": "Patentovaná technologie Stabildense® je naším příspěvkem k lepšímu každodennímu životu. Uzavřený oběh materiálů EPS, obnovitelná energie v továrně a lokální dodavatelské řetězce jsou naším příspěvkem k lepší planetě.",
+    "esg.lead": "Chráněná technologie Stabildense® je naším příspěvkem k lepšímu každodennímu životu. Uzavřený oběh materiálů EPS, obnovitelná energie v továrně a lokální dodavatelské řetězce jsou naším příspěvkem k lepší planetě.",
     "esg.tech.tag": "Stabildense®",
     "esg.tech.title": "Vícevrstvá struktura, kterou nelze zkopírovat.",
     "esg.tech.body": "5vrstvá kompozitní konstrukce s kovovou výztuhou. Registrovaný vzor — inovace vyvinutá v polském R&D centru Schedpol; úspěšně používaná téměř 20 let. Kompozitní materiál ve vaničce váží pouhých 9 kg/m² — při extrémní odolnosti vůči tlaku a nárazům.",
@@ -1377,7 +1382,7 @@ window.I18N = {
   sk: {
     "lang.name": "Slovenčina",
     "seo.title": "AEDLER — Sprchové vaničky, vane, odtoky · Stabildense® · Made in Poland",
-    "seo.desc": "AEDLER — prémiové sprchové vaničky, vane a odtoky v patentovanej technológii Stabildense®: ultraľahký kompozit s hmotnosťou iba 9 kg/m² s extrémnou odolnosťou voči tlaku a nárazom. Značka skupiny Schedpol, 45+ rokov skúseností, 1900+ SKU. Obchodná spolupráca, Private Label, dropshipping.",
+    "seo.desc": "AEDLER — prémiové sprchové vaničky, vane a odtoky v chránenej technológii Stabildense®: ultraľahký kompozit s hmotnosťou iba 9 kg/m² s extrémnou odolnosťou voči tlaku a nárazom. Značka skupiny Schedpol, 45+ rokov skúseností, 1900+ SKU. Obchodná spolupráca, Private Label, dropshipping.",
 
     "nav.products": "Produkty",
     "nav.technology": "Technológia",
@@ -1390,7 +1395,7 @@ window.I18N = {
     "hero.title.line1": "Európska presnosť,",
     "hero.title.line2": "trvalý základ",
     "hero.title.line3": "každej kúpeľne.",
-    "hero.sub": "Aedler spája poľskú výrobnú tradíciu s patentovanou technológiou Stabildense®. Spĺňame najvyššie normy EÚ v oblasti akustiky, trvanlivosti a hygieny — navrhujeme riešenia na desaťročia, nie na sezóny.",
+    "hero.sub": "Aedler spája poľskú výrobnú tradíciu s chránenou technológiou Stabildense®. Spĺňame najvyššie normy EÚ v oblasti akustiky, trvanlivosti a hygieny — navrhujeme riešenia na desaťročia, nie na sezóny.",
     "hero.cta.primary": "Začať spoluprácu",
     "hero.cta.secondary": "Spoznajte technológiu",
     "hero.tag": "Aedler · Made in Poland",
@@ -1454,6 +1459,7 @@ window.I18N = {
     "video.v2.title": "Renovačný systém — výmena vane za sprchu",
     "video.v2.desc": "Hotový systém na rýchlu výmenu vane za sprchový kút — bez búrania a neporiadku.",
     "video.play": "Prehrať video",
+    "video.watch": "Pozrieť na YouTube",
 
     "num.eyebrow": "Aedler & Schedpol v číslach",
     "num.title": "Štyri desaťročia európskej <em>presnosti</em>.",
@@ -1468,7 +1474,7 @@ window.I18N = {
 
     "esg.eyebrow": "Inovácia a zodpovednosť",
     "esg.title": "<em>Európske</em> štandardy. Poľská výroba.",
-    "esg.lead": "Patentovaná technológia Stabildense® je naším príspevkom k lepšiemu každodennému životu. Uzavretý obeh materiálov EPS, obnoviteľná energia v továrni a lokálne dodávateľské reťazce sú naším príspevkom k lepšej planéte.",
+    "esg.lead": "Chránená technológia Stabildense® je naším príspevkom k lepšiemu každodennému životu. Uzavretý obeh materiálov EPS, obnoviteľná energia v továrni a lokálne dodávateľské reťazce sú naším príspevkom k lepšej planéte.",
     "esg.tech.tag": "Stabildense®",
     "esg.tech.title": "Viacvrstvová štruktúra, ktorú nemožno skopírovať.",
     "esg.tech.body": "5-vrstvová kompozitná konštrukcia s kovovou výstuhou. Registrovaný vzor — inovácia vyvinutá v poľskom R&D centre Schedpol; úspešne používaná takmer 20 rokov. Kompozitný materiál vo vaničke váži iba 9 kg/m² — pri extrémnej odolnosti voči tlaku a nárazom.",
@@ -1725,6 +1731,7 @@ window.I18N = {
     "video.v2.title": "Sistem de renovare — cadă transformată în duș",
     "video.v2.desc": "Un sistem gata făcut pentru înlocuirea rapidă a căzii cu un duș — fără lucrări de demolare.",
     "video.play": "Redă videoclipul",
+    "video.watch": "Vizionează pe YouTube",
 
     "num.eyebrow": "Aedler & Schedpol în cifre",
     "num.title": "Patru decenii de <em>precizie</em> europeană.",

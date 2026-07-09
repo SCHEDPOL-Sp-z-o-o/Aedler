@@ -1,5 +1,9 @@
 # AEDLER — aktualizacja serwisu i uruchomienie na aedler.de
 
+> **Co zmienia ta paczka (lipiec 2026):**
+> 1. Ujednolicenie terminologii technologii Stabildense® w całym serwisie i danych SEO/AI — zamiast „opatentowana/patentowana" używamy „zastrzeżona / niezawodna" (spójne, bezpieczne prawnie sformułowania). Zmiana objęła: nagłówek strony, opisy meta (SEO), dane strukturalne Schedema.org, plik `llms.txt` (dla AI), tłumaczenia wszystkich 7 języków oraz ulotki A4.
+> 2. Sekcja z filmami: karty wideo otwierają teraz film bezpośrednio w YouTube (w nowej karcie) — koniec z „Błędem 153 / błędem konfiguracji odtwarzacza". Dotyczy obu filmów.
+
 Ten dokument ma dwie części:
 1. **Instrukcja dla Ciebie** — jak wgrać zaktualizowany serwis na GitHub (krok po kroku, bez wiedzy technicznej).
 2. **Gotowa wiadomość dla informatyka** — do przekazania po wgraniu plików (przekierowanie domeny w nazwa.pl + SSL).
@@ -22,7 +26,7 @@ Masz cały projekt w jednym pobranym pliku ZIP. W środku są m.in.:
 3. Kliknij przycisk **`Add file`** (u góry, po prawej) → **`Upload files`**.
 4. **Zaznacz wszystkie pliki i foldery** z rozpakowanego folderu i **przeciągnij je** do okna przeglądarki (albo kliknij „choose your files" i zaznacz wszystko).
    - Ważne: przeciągnij również folder **`assets`** w całości — GitHub zachowa jego zawartość.
-5. Przewiń na dół do sekcji **„Commit changes"**. W polu opisu wpisz np. `Aktualizacja serwisu — lipiec 2026`.
+5. Przewiń na dół do sekcji **„Commit changes"**. W polu opisu wpisz np. `Aktualizacja lipiec 2026 — terminologia Stabildense + linki do filmów`.
 6. Zostaw zaznaczone **„Commit directly to the main branch"** i kliknij zielony **`Commit changes`**.
 7. Gotowe. GitHub sam opublikuje zmiany. Podgląd pojawi się po **~1 minucie** pod adresem roboczym:
    **https://schedpol.github.io/Aedler/**

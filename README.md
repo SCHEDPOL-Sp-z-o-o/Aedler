@@ -1,6 +1,6 @@
 # AEDLER — Landing Page
 
-Premium B2B landing page for the AEDLER brand by Schedpol Sp. z o.o. — European bathroom engineering with patented Stabildense® technology.
+Premium B2B landing page for the AEDLER brand by Schedpol Sp. z o.o. — European bathroom engineering with proprietary Stabildense® technology.
 
 ## Tech
 

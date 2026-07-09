@@ -59,7 +59,7 @@ window.I18N = {
 | `hero.*` | Sekcja powitalna (duży tytuł) |
 | `trust.*` | Pasek z logami sieci DIY |
 | `eco.*` | 4 karty kategorii produktowych |
-| `num.*` | Sekcja z liczbami (45+ lat, 20+ patentów...) |
+| `num.*` | Sekcja z liczbami (45+ lat, 20+ wzorów zastrzeżonych...) |
 | `tech.*` | Karuzela technologii Stabildense® |
 | `esg.*` | Sekcja ESG / odpowiedzialność |
 | `cat.*` | Katalog produktów (4 plansze) |

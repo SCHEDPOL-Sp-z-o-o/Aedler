@@ -218,24 +218,7 @@
     items.forEach((i) => obs.observe(i));
   }
 
-  /* ---------- Video facades (click-to-load YouTube) ---------- */
-  function initVideos() {
-    document.querySelectorAll('.video-embed[data-video]').forEach((box) => {
-      box.addEventListener('click', () => {
-        if (box.dataset.loaded) return;
-        box.dataset.loaded = '1';
-        const id = box.getAttribute('data-video');
-        const lang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
-        const iframe = document.createElement('iframe');
-        iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&hl=${lang}&cc_lang_pref=${lang}`;
-        iframe.title = box.parentElement.querySelector('h3') ? box.parentElement.querySelector('h3').textContent : 'Video';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-        box.innerHTML = '';
-        box.appendChild(iframe);
-      });
-    });
-  }
+  /* ---------- Video cards open on YouTube (native <a>, no embed) ---------- */
 
   /* ---------- Init ---------- */
   document.addEventListener('DOMContentLoaded', () => {
@@ -244,7 +227,6 @@
     initCarousel();
     initLightbox();
     initCounters();
-    initVideos();
     initReveal();
   });
 })();
